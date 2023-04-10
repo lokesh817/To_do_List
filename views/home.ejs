@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" src="./CSS/style.css">
+</head>
+<body>
+    <h2>To do App</h2>
+    <form action="/create-task" method="post">
+        <input type="text" name="Discription" placeholder="Discription">
+        <label for="category">Choose a category</label>
+        <select name="category" id="category">
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Clearing">Clearing</option>
+            <option value="Others">Others</option>
+        </select>
+        <input type="date" name="Due Date" placeholder="dd/mm/yyyy">
+        <button type="submit">Add Task</button>
+        <button type="submit">Delete Task</button>
+    </form>
+    <ul>
+        <% for(let i of To_Do_List){ %>
+            
+            <li>
+                <p><%= i.Description %></p>
+                <p><%= i.Category %></p>
+                <p><%= i.Due_Date %></p>
+            </li>
+        <%}%>
+    </ul>
+    
+</body>
+</html>
