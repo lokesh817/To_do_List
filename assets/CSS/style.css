@@ -1,3 +1,84 @@
 body{
-    background-color: aquamarine;
+    background-color: gray;
+    margin: 0;
+}
+main{
+    width: 40%;
+    margin: auto auto;
+    padding-left: 3px;
+}
+h2{
+    padding-top: 2%;
+    color: gray;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+}
+.box{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+::placeholder{
+    margin: 0;
+    color: lightgray;
+    font-size: 0.7rem;
+    
+}
+input[type='text']{
+    padding: 0;
+    margin: 0;
+    width: 98%;
+    height: auto;
+    border:0;
+}
+input:focus{
+    border: 0;
+    background-color: none;
+}
+.half-box{
+    width: 49%;
+    display: inline-block;
+}
+.label-text{
+    margin: 0;
+    font-size: 0.7rem; 
+}
+label{
+    font-size: 0.8rem;
+    color: gray;
+}
+#category{
+    width: 45%;
+    border: 0;
+    font-size: 0.7rem;
+}
+input[type='date']{
+    border: none;
+    font-size: 0.7rem;
+    width: 45%;
+}
+.buttons-box{
+    width: 100%;
+    text-align: center;
+}
+.buttons{
+    display: inline-block;
+    margin: 1%;
+    width: 70%;
+}
+button{
+    width: 40%;
+    height: 35px;
+    color: white;
+    border: none;
+}
+.add-button{
+    background-color: black ;
+}
+.delete-button{
+    background-color: red;
 }
