@@ -27,7 +27,7 @@ app.get('/',function(req,res){
 });
 app.post('/create-task/',function(req,res){
     list_schema.create({
-        Discription:req.body.Discription,
+        Description:req.body.Description,
         Category:req.body.Category,
         Due_Date:req.body.Due_Date
     });

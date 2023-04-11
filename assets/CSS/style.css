@@ -51,7 +51,7 @@ label{
     font-size: 0.8rem;
     color: gray;
 }
-#category{
+#Category{
     width: 45%;
     border: 0;
     font-size: 0.7rem;
@@ -81,4 +81,49 @@ button{
 }
 .delete-button{
     background-color: red;
+    
+}
+.delete-button a{
+    text-decoration: none;
+    color: white;
+}
+.checkbox{
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    font-size: 0.8rem;
+}
+.checkbox:active{
+    color: blue;
+}
+.Saved-list{
+    
+    border: 1px solid lightgray;
+    background-color: white;
+    color: gray;
+}
+.single-item-details{
+    position: relative;
+}
+.category-label{
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    width: 77px;
+    background-color: blue;
+}
+.category-label h2{
+    color: white;
+}
+ul{
+    padding: 5;
+    margin: 0;
+}
+li{
+    list-style-type: none;
+    font-size: 0.6rem;
+}
+.des-text-size{
+    margin: 2px;
+    font-size: 1rem;
 }

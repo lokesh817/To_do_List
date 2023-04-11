@@ -14,18 +14,18 @@
         <div class="Title-heading box">
             <h2>To do App</h2>
         </div>
-        <div class="new-task-details box">
+        
             <div class="task-data">
                 <form action="/create-task" method="post">
                     <div class="box">
-                        <label for="Discription">Discription</label>
-                        <input type="text" name="Discription" placeholder="What do you need to do?">
+                        <label for="Description">Description</label>
+                        <input type="text" name="Description" placeholder="What do you need to do?">
                     </div>
                     <div class="box">
                         <div class="half-box">
-                            <label for="category">Category</label><br>
+                            <label for="Category">Category</label><br>
                             <span class="label-text">Choose a Category</span>
-                            <select name="category" id="category">
+                            <select name="Category" id="Category">
                                 <option></option>
                                 <option value="Personal">Personal</option>
                                 <option value="Work">Work</option>
@@ -42,24 +42,26 @@
                     <div class="buttons-box box">
                         <div class="buttons">
                             <button type="submit" class="add-button"><i class="fas fa-plus"></i> Add Task</button>
-                            <button type="submit" class="delete-button"><i class="fas fa-trash-alt"></i> Delete Task</button>
+                            <button class="delete-button"><a href="/delete-task"><i class="fas fa-trash-alt"></i> Delete Task</a></button>
                         </div>
-                        
                     </div> 
                 </form>
             </div>
-               
+        <div class="Saved-list">
+            <ul>
+                <% for(let i of To_Do_List){ %>
+                    <li>
+                        <div class="single-item-details box">
+                            <i class="fas fa-check-circle checkbox"></i>
+                            <p class="des-text-size"><%= i.Description %></p>
+                            <div class="category-label"><h2><%= i.Category %></h2></div>
+                            <span><i class="fas fa-calendar "> </i> <%= i.Due_Date %></span>
+                        </div>
+                        
+                    </li>
+                <%}%>
+            </ul>
         </div>
-        <ul>
-            <% for(let i of To_Do_List){ %>
-                
-                <li>
-                    <p><%= i.Description %></p>
-                    <p><%= i.Category %></p>
-                    <p><%= i.Due_Date %></p>
-                </li>
-            <%}%>
-        </ul>
     </main>    
 </body>
 </html>
