@@ -19,30 +19,30 @@
                 <form action="/create-task" method="post">
                     <div class="box">
                         <label for="Description">Description</label>
-                        <input type="text" name="Description" placeholder="What do you need to do?">
+                        <input type="text" name="Description" placeholder="What do you need to do?" >
                     </div>
                     <div class="box">
                         <div class="half-box">
                             <label for="Category">Category</label><br>
                             <span class="label-text">Choose a Category</span>
-                            <select name="Category" id="Category">
-                                <option></option>
+                            <select name="Category" id="Category" >
+                                <option value=""></option>
                                 <option value="Personal">Personal</option>
                                 <option value="Work">Work</option>
-                                <option value="School">School</option>
-                                <option value="Clearing">Clearing</option>
+                                <!-- <option value="School">School</option> -->
+                                <option value="Claeaning">Clearing</option>
                                 <option value="Others">Others</option>
                             </select>
                         </div>
                         <div class="half-box">
                             <label for="Due_Date">Due Date</label><br>
-                            <input type="date" name="Due_Date" placeholder="dd/mm/yyyy"><br>
+                            <input type="date" name="Due_Date" placeholder="dd/mm/yyyy" ><br>
                         </div>
                     </div>
                     <div class="buttons-box box">
                         <div class="buttons">
                             <button type="submit" class="add-button"><i class="fas fa-plus"></i> Add Task</button>
-                            <button class="delete-button"><a href="/delete-task"><i class="fas fa-trash-alt"></i> Delete Task</a></button>
+                            <button id="delete-button"><i class="fas fa-trash-alt"></i> Delete Task</button>
                         </div>
                     </div> 
                 </form>
@@ -50,9 +50,10 @@
         <div class="Saved-list">
             <ul>
                 <% for(let i of To_Do_List){ %>
+                    
                     <li>
                         <div class="single-item-details box">
-                            <i class="fas fa-check-circle checkbox"></i>
+                            <input type="checkbox" name="check-delete" class="check-box"  id=<%= i._id %>>
                             <p class="des-text-size"><%= i.Description %></p>
                             <div class="category-label"><h2><%= i.Category %></h2></div>
                             <span><i class="fas fa-calendar "> </i> <%= i.Due_Date %></span>
@@ -60,8 +61,11 @@
                         
                     </li>
                 <%}%>
+                
             </ul>
+            
         </div>
-    </main>    
+    </main>
+    <script src="./Js/script.js"></script>    
 </body>
 </html>

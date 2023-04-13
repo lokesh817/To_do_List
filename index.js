@@ -11,6 +11,7 @@ const list_schema=require('./models/list_schema');
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
+app.use(express.json());
 app.use(express.static('assets'));
 
 app.get('/',function(req,res){
@@ -26,24 +27,28 @@ app.get('/',function(req,res){
     })
 });
 app.post('/create-task/',function(req,res){
+    // let options={ weekday: 'long',years: 'numeric', month: 'long', day: 'numeric'};
+    // let date=new date(req.body.Due_Date);
+    // let day=date.toLocaleDateString("en-us",options);
     list_schema.create({
         Description:req.body.Description,
         Category:req.body.Category,
+        //Due_Date:day
         Due_Date:req.body.Due_Date
     });
     return res.redirect('back');
 })
-app.get('/delete-task',function(req,res){
-    const id=req.query.id;
-    list_schema.findByIdAndDelete(id)
-    .then(function(){
-        console.log('deleted task');
+app.post('/delete-task',async function(req,res){
+    try{
+        const task=req.body.task;
+        for( let i of task){
+            await list_schema.findByIdAndDelete({_id:i});
+        }
         return res.redirect('back');
-    })
-    .catch(function(err){
-        console.log('not deleted');
-        return res.redirect('back');
-    })
+    }
+    catch(error){
+        console.log(error);
+    }
 })
 
 

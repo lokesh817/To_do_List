@@ -38,6 +38,7 @@ input[type='text']{
 input:focus{
     border: 0;
     background-color: none;
+    outline: none;
 }
 .half-box{
     width: 49%;
@@ -79,23 +80,21 @@ button{
 .add-button{
     background-color: black ;
 }
-.delete-button{
+#delete-button{
     background-color: red;
     
 }
-.delete-button a{
+#delete-button a{
     text-decoration: none;
     color: white;
 }
-.checkbox{
+.check-box{
     position: absolute;
-    left: -15px;
-    top: 5px;
+    left: -22px;
+   
     font-size: 0.8rem;
 }
-.checkbox:active{
-    color: blue;
-}
+
 .Saved-list{
     
     border: 1px solid lightgray;
@@ -109,8 +108,7 @@ button{
     display: inline-block;
     position: absolute;
     right: 5px;
-    width: 77px;
-    background-color: blue;
+    width: 88px;
 }
 .category-label h2{
     color: white;
@@ -126,4 +124,18 @@ li{
 .des-text-size{
     margin: 2px;
     font-size: 1rem;
+}
+.work{
+    background-color:lightcoral;
+        
+}
+.Personal{
+    background-color: skyblue;
+
+}
+.Claeaning{
+    background-color: green;
+}
+.Others{
+    background-color: teal;
 }
